@@ -1,0 +1,37 @@
+﻿@model AppointmentMvc.Models.Appointment
+
+@{
+    ViewData["Title"] = "Randevu Düzenle";
+}
+<h2>Randevu Düzenle</h2>
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+<div class="mb3">
+    <label
+        class="form-label">Tarih</label>
+        <input type="datetime-local" name="Date" class="form-control" value="@Model.Date.ToString("yyyy-MM-ddThh:mm")" required />
+</div>
+<div class="mb-3">
+    <label 
+        class="form-label">Açıklama</label>
+        <input type="text" name="Description" class="form-control" value="@Model.Description" required />
+</div>
+<div class="mb-3">
+    <label 
+        class="form-label">Durum</label>
+        <select name="Status"
+            class="form-control">
+        <option value="Bekliyor"
+            selected="@("Bekliyor" ==
+            Model.Status)">Bekliyor</option>
+        <option value="Onaylandı"
+        selected="@("Onaylandı" ==
+        Model.Status)">Onaylandı</option>
+    <option value="İptal Edildi"
+        selected="@("İptal Edildi" ==
+        Model.Status)">İptal Edildi</option>
+    </select>
+</div>
+<button type="submit" class="btn-success">Güncelle</button>
+</form>
+<a href="/Appointment/Index">Geri Dön</a>

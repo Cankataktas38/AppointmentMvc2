@@ -1,0 +1,17 @@
+﻿@model AppointmentMvc.Models.LoginViewModel
+
+<h2>Giriş Yap</h2>
+<form method="post">
+    <div class="mb-3">
+        <label
+            class="form-label">E-Posta</label>
+            <input type="email" name="Email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label
+            class="form-label">Şifre</label>
+            <input type="password" name="Password" class="form-control" required />
+    </div>
+    <button type="submit" class="btn-success">Giriş Yap</button>
+</form>
+<a href="/Auth/Register">Kayıt Ol</a>
